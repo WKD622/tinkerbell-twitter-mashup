@@ -1,0 +1,43 @@
+
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'eclipse'
+    id 'application'
+}
+
+description = 'twitter-mashup'
+version = '0.1'
+
+mainClassName = 'tinkerbell.mashup.Main'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+	}
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+	implementation group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.6'
+	
+	implementation group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.2.0'
+	implementation group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.2.0'
+	
+	implementation group: 'com.datastax.spark', name: 'spark-cassandra-connector_2.11', version: '2.0.7'
+	implementation group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '3.4.0'
+	
+	implementation group: 'com.rubiconproject.oss', name: 'jchronic', version: '0.2.6'
+	//implementation group: 'com.typesafe.akka', name: 'akka-actor_2.12', version: '2.5.11'
+	implementation group: 'org.jfree', name: 'jfreechart', version: '1.5.0'
+	implementation group: 'jfree', name: 'jcommon', version: '1.0.16'
+}
